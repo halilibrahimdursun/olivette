@@ -1,0 +1,181 @@
+{
+    "version": "relation/v1",
+    "header": [
+        "WARE",
+        "CODE",
+        "NAME",
+        "OPERATOR",
+        "PLANT",
+        "ADDR",
+        "WAREHOUSE_NUMBER",
+        "WAREHOUSE_TYPE",
+        "OWNERSHIP"
+    ],
+    "values": [
+        [
+            "1A",
+            12,
+            "Manufacturing rotterdam with bio-feedstock",
+            "OLIVETTE GROUP SE",
+            "N001",
+            "1a2b3c",
+            "1A12",
+            "Manufacturing Plant",
+            "Olivette"
+        ],
+        [
+            "1A",
+            13,
+            "Rme",
+            "OLIVETTE GROUP SE",
+            "I001",
+            "2q3w3e",
+            "1A13",
+            "Manufacturing Plant",
+            "Olivette"
+        ],
+        [
+            "1A",
+            14,
+            "Corleone",
+            "OLIVETTE GROUP SE",
+            "I003",
+            "2e3r4t",
+            "1A14",
+            "Manufacturing Plant",
+            "Olivette"
+        ],
+        [
+            "1A",
+            15,
+            "Amster",
+            "OLIVETTE GROUP SE",
+            "N003",
+            "1q2w3e",
+            "1A15",
+            "Manufacturing Plant",
+            "Olivette"
+        ],
+        [
+            "1A",
+            16,
+            "Malage with clean disch",
+            "OLIVETTE GROUP SE",
+            "E001",
+            "3r4t5y",
+            "1A16",
+            "Manufacturing Plant",
+            "Olivette"
+        ],
+        [
+            "1B",
+            11,
+            "Finco Rotterdam",
+            "FINCO SE",
+            "N125",
+            "1z2x3c",
+            "1B11",
+            "Warehouse",
+            "Olivette"
+        ],
+        [
+            "1B",
+            12,
+            "Olivette Latina",
+            "OLIVETTE ITALY SRL",
+            "I122",
+            "2a2s2d",
+            "1B12",
+            "Warehouse",
+            "Olivette"
+        ],
+        [
+            "1B",
+            13,
+            "Sunoil Napoli",
+            "SUNOIL SE",
+            "I234",
+            "2f2g2h",
+            "1B13",
+            "Warehouse",
+            "Olivette"
+        ],
+        [
+            "1B",
+            14,
+            "Ams Olivette",
+            "OLIVETTE BV",
+            "N111",
+            "1h1j1k",
+            "1B14",
+            "Warehouse",
+            "Olivette"
+        ],
+        [
+            "1B",
+            15,
+            "Hoofddorp O",
+            "OLIVETTE BV",
+            "N345",
+            "1j1k1l",
+            "1B15",
+            "Warehouse",
+            "Olivette"
+        ],
+        [
+            "1B",
+            16,
+            "Malaga Olivette",
+            "FINCO SE",
+            "E243",
+            "3q3w3e",
+            "1B16",
+            "Warehouse",
+            "Olivette"
+        ],
+        [
+            "2B",
+            11,
+            "Agrify",
+            "AGRIFY BV",
+            "N456",
+            "1c1v1b",
+            "2B11",
+            "Warehouse",
+            "Third Party"
+        ],
+        [
+            "2B",
+            12,
+            "STOR Maastr",
+            "STOR SE",
+            "N457",
+            "1n1m1a",
+            "2B12",
+            "Warehouse",
+            "Third Party"
+        ],
+        [
+            "2B",
+            13,
+            "STOR Madrid",
+            "STOR SE",
+            "E455",
+            "3t3y4f",
+            "2B13",
+            "Warehouse",
+            "Third Party"
+        ],
+        [
+            "2B",
+            14,
+            "Modena",
+            "MODENA SRL",
+            "I467",
+            "2u2i5h",
+            "2B14",
+            "Warehouse",
+            "Third Party"
+        ]
+    ]
+}

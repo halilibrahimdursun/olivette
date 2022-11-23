@@ -1,0 +1,147 @@
+{
+    "iri": "http://rdf.olivette.org/dl#shipMeWarehouseWarehouses",
+    "source": "http://rdf.olivette.org/dl#shipMeWarehouse",
+    "label": "shipme_warehouse",
+    "root": {
+        "iri": "http://rdf.olivette.org/dl#shipMeWarehouse_Warehouse",
+        "class": "http://rdf.olivette.org/location#Warehouse",
+        "projection": [
+            {
+                "predicate": "http://rdf.olivette.org/location#warehouseName",
+                "attribute": "NAME",
+                "functional": true,
+                "rank": 5,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+                "predicate": "http://rdf.olivette.org/location#warehouseNumber",
+                "attribute": "WAREHOUSE_NUMBER",
+                "functional": true,
+                "rank": 1,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+                "attribute": "WAREHOUSE_NUMBER",
+                "key": "WAREHOUSE_NUMBER"
+            }
+        ],
+        "links": [
+            {
+                "predicate": "http://rdf.olivette.org/location#locatedOn",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#shipMeWarehouse_Address",
+                    "class": "http://rdf.olivette.org/location#Address",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/location#addressHash",
+                            "attribute": "ADDR",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/location#hasOwnership",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#shipMeWarehouse_Ownership",
+                    "class": "http://rdf.olivette.org/location#Ownership",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/location#ownershipLabel",
+                            "attribute": "OWNERSHIP",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/location#hasType",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#shipMeWarehouse_WarehouseType",
+                    "class": "http://rdf.olivette.org/location#WarehouseType",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/location#warehouseTypeLabel",
+                            "attribute": "WAREHOUSE_TYPE",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/location#operatedBy",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#shipMeWarehouse_LegalEntity",
+                    "class": "http://rdf.olivette.org/legalEntity#LegalEntity",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/legalEntity#legalEntityName",
+                            "attribute": "OPERATOR",
+                            "functional": true,
+                            "rank": 2,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/location#hasLocationAccount",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#shipMeWarehouse_LocationAccount",
+                    "class": "http://rdf.olivette.org/account#LocationAccount",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/account#hasPlantNumber",
+                            "attribute": "PLANT",
+                            "functional": true,
+                            "rank": 2,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "classes": [
+        {
+            "iri": "http://rdf.olivette.org/location#Warehouse",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/location#WarehouseType",
+            "instantiate": false
+        },
+        {
+            "iri": "http://rdf.olivette.org/location#Address",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/location#Ownership",
+            "instantiate": false
+        },
+        {
+            "iri": "http://rdf.olivette.org/legalEntity#LegalEntity",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/account#LocationAccount",
+            "instantiate": true
+        }
+    ]
+}

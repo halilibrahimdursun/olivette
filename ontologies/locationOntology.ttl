@@ -1,0 +1,225 @@
+# baseURI: http://rdf.olivette.org/location
+# imports: http://rdf.olivette.org/account
+
+@prefix : <http://rdf.olivette.org/location#> .
+@prefix account: <http://rdf.olivette.org/account#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rdf.olivette.org/location>
+  rdf:type owl:Ontology ;
+  owl:imports <http://rdf.olivette.org/account> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:Address
+  rdf:type owl:Class ;
+  rdfs:comment "An address which belongs to a location." ;
+  rdfs:label "Address" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Facility
+  rdf:type owl:Class ;
+  rdfs:comment "A place, amenity, or piece of equipment provided for a particular purpose" ;
+  rdfs:label "Facility" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Ownership
+  rdf:type owl:Class ;
+  rdfs:comment "Is the state or fact of legal possession and control over the warehouse" ;
+  rdfs:label "Ownership" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:ShipmentMethod
+  rdf:type owl:Class ;
+  rdfs:comment "indicates the method of the shipment" ;
+  rdfs:label "Shipment Method" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Warehouse
+  rdf:type owl:Class ;
+  rdfs:comment "A place where the ready products are stored." ;
+  rdfs:label "Warehouse" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:WarehouseType
+  rdf:type owl:Class ;
+  rdfs:comment "The type of the warehouse; manufacturing, storing etc." ;
+  rdfs:label "WarehouseType" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:addressHash
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "the hash of address in the system." ;
+  rdfs:domain :Address ;
+  rdfs:label "address hash" ;
+  rdfs:range xsd:string ;
+.
+:bottling
+  rdf:type :Facility ;
+  :facilityLabel "Bottling" ;
+.
+:facilityLabel
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "shows the type of the facility" ;
+  rdfs:domain :Facility ;
+  rdfs:label "Facility Label" ;
+  rdfs:range xsd:string ;
+.
+:facilityName
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "the name of facility stated in the PiPY system." ;
+  rdfs:domain :Facility ;
+  rdfs:label "Facility Name" ;
+  rdfs:range xsd:string ;
+.
+:hasAdress
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Shows the adress of the location account" ;
+  rdfs:domain account:LocationAccount ;
+  rdfs:label "Location Account has address" ;
+  rdfs:range :Address ;
+.
+:hasExpireDate
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "the expire date of license at which warehouse the company holds." ;
+  rdfs:domain :ShipmentMethod ;
+  rdfs:label "License has Expire Date" ;
+  rdfs:range xsd:string ;
+.
+:hasFacility
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Shows the facilities of the warehouse" ;
+  rdfs:domain :Warehouse ;
+  rdfs:label "Warehouse has facility" ;
+  rdfs:range :Facility ;
+.
+:hasLocationAccount
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Shows in which location account that the transactions in the warehouse is booked" ;
+  rdfs:domain :Warehouse ;
+  rdfs:label "Warehouse has Location Account" ;
+  rdfs:range account:LocationAccount ;
+.
+:hasOwnership
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Shows who owns the warehouse" ;
+  rdfs:domain :Warehouse ;
+  rdfs:label "Warehouse has ownership" ;
+  rdfs:range :Ownership ;
+.
+:hasShipmentMethod
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Shows the method of the shipment of the products which are stored in the warehouse." ;
+  rdfs:domain :Warehouse ;
+  rdfs:label "Warehouse has shipment method" ;
+  rdfs:range :ShipmentMethod ;
+.
+:hasType
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Shows the type and role of the warehouse" ;
+  rdfs:domain :Warehouse ;
+  rdfs:label "Warehouse has type" ;
+  rdfs:range :WarehouseType ;
+.
+:isCleanDischarge
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "shows whether a manufacturing facility is a clean discharge facility." ;
+  rdfs:domain :Facility ;
+  rdfs:label "Is clean discharge" ;
+  rdfs:range xsd:boolean ;
+.
+:locatedOn
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Shows the adress of the warehouse" ;
+  rdfs:domain :Warehouse ;
+  rdfs:label "Warehouse located on the address" ;
+  rdfs:range :Address ;
+.
+:manufacturingPlant
+  rdf:type :WarehouseType ;
+  :warehouseTypeLabel "Manufacturing Plant" ;
+.
+:olivette
+  rdf:type :Ownership ;
+  :ownershipLabel "Olivette" ;
+.
+:operatedBy
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Shows which legal entity operates the warehouse" ;
+  rdfs:domain :Warehouse ;
+  rdfs:label "Warehouse operated by legal entity" ;
+  rdfs:range <http://rdf.olivette.org/legalEntity#LegalEntity> ;
+.
+:ownershipLabel
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "shows the type of the ownership" ;
+  rdfs:domain :Ownership ;
+  rdfs:label "Ownership Label" ;
+  rdfs:range xsd:string ;
+.
+:shellsPress
+  rdf:type :Facility ;
+  :facilityLabel "Shells Press" ;
+.
+:shipmentMethodLabel
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "shows whether transactions in a warehouse made tax free." ;
+  rdfs:domain :ShipmentMethod ;
+  rdfs:label "Shipment Method Label" ;
+  rdfs:range xsd:string ;
+.
+:taxFree
+  rdf:type :ShipmentMethod ;
+  :shipmentMethodLabel "Tax Free" ;
+.
+:taxed
+  rdf:type :ShipmentMethod ;
+  :shipmentMethodLabel "Taxed" ;
+.
+:thirdParty
+  rdf:type :Ownership ;
+  :ownershipLabel "Third Party" ;
+.
+:warehouse
+  rdf:type :WarehouseType ;
+  :warehouseTypeLabel "Warehouse" ;
+.
+:warehouseName
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "the name of warehouse stated in ShipMe system." ;
+  rdfs:domain :Warehouse ;
+  rdfs:label "Warehouse Name" ;
+  rdfs:range xsd:string ;
+.
+:warehouseNumber
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "the number of warehouse reproduced from WARE and CODE." ;
+  rdfs:domain :Warehouse ;
+  rdfs:label "Warehouse Number" ;
+  rdfs:range xsd:string ;
+.
+:warehouseTypeLabel
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "shows the type of the warehouse" ;
+  rdfs:domain :WarehouseType ;
+  rdfs:label "Warehouse Type Label" ;
+  rdfs:range xsd:string ;
+.

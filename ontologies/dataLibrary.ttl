@@ -1,0 +1,168 @@
+# baseURI: http://rdf.olivette.org/dl
+# imports: http://rdf.olivette.org/location
+# imports: http://www.datasingularity.org/metalanguage
+
+@prefix : <http://rdf.olivette.org/dl#> .
+@prefix ds: <http://www.datasingularity.org/metalanguage#> .
+@prefix location: <http://rdf.olivette.org/location#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rdf.olivette.org/account#AccountType>
+  ds:hasNaturalKey :accountTypeNKLabel ;
+.
+<http://rdf.olivette.org/account#Contract>
+  ds:hasNaturalKey :contractNKLabel ;
+.
+<http://rdf.olivette.org/account#LocationAccount>
+  ds:hasNaturalKey :locationAccountNKName ;
+  ds:hasNaturalKey :locationAccountNKPlantNumber ;
+.
+<http://rdf.olivette.org/account#PartnerAccount>
+  ds:hasNaturalKey :partnerAccountNKNumber ;
+.
+<http://rdf.olivette.org/account#accountTypeLabel>
+  rdf:type owl:FunctionalProperty ;
+.
+<http://rdf.olivette.org/dl>
+  rdf:type owl:Ontology ;
+  owl:imports <http://rdf.olivette.org/location> ;
+  owl:imports <http://www.datasingularity.org/metalanguage> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:accountTypeNKLabel
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate <http://rdf.olivette.org/account#accountTypeLabel> ;
+.
+:addressNKHash
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:addressHash ;
+.
+:contractNKLabel
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate <http://rdf.olivette.org/account#contractLabel> ;
+.
+:facilityNKLabel
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:facilityLabel ;
+.
+:facilityNKName
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:facilityName ;
+.
+:legalEntityGroupNKName
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate <http://rdf.olivette.org/legalEntity#legalEntityGroupName> ;
+.
+:legalEntityNKName
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate <http://rdf.olivette.org/legalEntity#legalEntityName> ;
+.
+:licenseNKNumber
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:licenseNumber ;
+.
+:locationAccountNKName
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate <http://rdf.olivette.org/account#locationAccountName> ;
+.
+:locationAccountNKPlantNumber
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate <http://rdf.olivette.org/account#hasPlantNumber> ;
+.
+:ownershipNKLabel
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:ownershipLabel ;
+.
+:partnerAccountNKHasAccountType
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate <http://rdf.olivette.org/account#hasAccountType> ;
+.
+:partnerAccountNKName
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate <http://rdf.olivette.org/account#partnerAccountName> ;
+.
+:partnerAccountNKNumber
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate <http://rdf.olivette.org/account#partnerAccountNumber> ;
+.
+:pipyPlant
+  rdf:type ds:Application ;
+  ds:description "Application Pipy Plant to set up manufacturing facilities." ;
+  ds:label "Pipy_Plant" ;
+.
+:sapCounterparty
+  rdf:type ds:Application ;
+  ds:description "Application SAP Counterparty to set up partner accounts" ;
+  ds:label "SAP_Counterparty" ;
+.
+:sapPlant
+  rdf:type ds:Application ;
+  ds:description "Application SAP Plant to set up location accounts" ;
+  ds:label "SAP_Plant" ;
+.
+:shipMeHard
+  rdf:type ds:Application ;
+  ds:description "Application ShipMeHard to set up warehouses" ;
+  ds:label "ShipMe_Hard" ;
+.
+:shipMePartners
+  rdf:type ds:Application ;
+  ds:description "Application ShipMePartners to set up legal entities" ;
+  ds:label "ShipMe_Partners" ;
+.
+:shipMeWarehouse
+  rdf:type ds:Application ;
+  ds:description "Application ShipMeWarehouse to set up warehouses" ;
+  ds:label "ShipMe_Warehouse" ;
+.
+:shipmentMethodNKLabel
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:shipmentMethodLabel ;
+.
+:warehouseNKHasLocationAccount
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:hasLocationAccount ;
+.
+:warehouseNKLocatedOn
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:locatedOn ;
+.
+:warehouseNKNumber
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:warehouseNumber ;
+.
+:warehouseTypeNKLabel
+  rdf:type ds:NaturalKey ;
+  ds:domainPredicate location:warehouseTypeLabel ;
+.
+<http://rdf.olivette.org/legalEntity#LegalEntity>
+  ds:hasNaturalKey :legalEntityNKName ;
+.
+<http://rdf.olivette.org/legalEntity#LegalEntityGroup>
+  ds:hasNaturalKey :legalEntityGroupNKName ;
+.
+location:Address
+  ds:hasNaturalKey :addressNKHash ;
+.
+location:Facility
+  ds:hasNaturalKey :facilityNKLabel ;
+  ds:hasNaturalKey :facilityNKName ;
+.
+location:Ownership
+  ds:hasNaturalKey :ownershipNKLabel ;
+.
+location:ShipmentMethod
+  ds:hasNaturalKey :licenseNKNumber ;
+  ds:hasNaturalKey :shipmentMethodNKLabel ;
+.
+location:Warehouse
+  ds:hasNaturalKey :warehouseNKHasLocationAccount ;
+  ds:hasNaturalKey :warehouseNKLocatedOn ;
+  ds:hasNaturalKey :warehouseNKNumber ;
+.
+location:WarehouseType
+  ds:hasNaturalKey :warehouseTypeNKLabel ;
+.

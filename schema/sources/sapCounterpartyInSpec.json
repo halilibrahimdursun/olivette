@@ -1,0 +1,110 @@
+{
+    "iri": "http://rdf.olivette.org/dl#sapCounterpartyPartnerAccounts",
+    "source": "http://rdf.olivette.org/dl#sapCounterparty",
+    "label": "sap_counterparty",
+    "root": {
+        "iri": "http://rdf.olivette.org/dl#sapCounterparty_PartnerAccount",
+        "class": "http://rdf.olivette.org/account#PartnerAccount",
+        "projection": [
+            {
+                "predicate": "http://rdf.olivette.org/account#partnerAccountName",
+                "attribute": "NM",
+                "functional": true,
+                "rank": 1,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+                "predicate": "http://rdf.olivette.org/account#partnerAccountNumber",
+                "attribute": "KUNNR",
+                "functional": true,
+                "rank": 1,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+                "predicate": "http://rdf.olivette.org/account#isInterCompany",
+                "attribute": "INTERCMP",
+                "functional": true,
+                "rank": 1,
+                "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+            },
+            {
+                "attribute": "KUNNR",
+                "key": "KUNNR"
+            }
+        ],
+        "links": [
+            {
+                "predicate": "http://rdf.olivette.org/account#hasLegalEntity",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#sapCounterparty_LegalEntity",
+                    "class": "http://rdf.olivette.org/legalEntity#LegalEntity",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/legalEntity#legalEntityName",
+                            "attribute": "ACCT",
+                            "functional": true,
+                            "rank": 2,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/account#hasAccountType",
+                "functional": false,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#sapCounterparty_AccountType",
+                    "class": "http://rdf.olivette.org/account#AccountType",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/account#accountTypeLabel",
+                            "attribute": "FUNC",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/account#hasContract",
+                "functional": false,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#sapCounterparty_Contract",
+                    "class": "http://rdf.olivette.org/account#Contract",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/account#contractLabel",
+                            "attribute": "CONTRACT",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "classes": [
+        {
+            "iri": "http://rdf.olivette.org/account#PartnerAccount",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/legalEntity#LegalEntity",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/account#AccountType",
+            "instantiate": false
+        },
+        {
+            "iri": "http://rdf.olivette.org/account#Contract",
+            "instantiate": false
+        }
+    ]
+}

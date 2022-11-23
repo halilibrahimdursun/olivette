@@ -1,0 +1,25 @@
+from xmlrpc.client import boolean
+from ouroboros.functions import converter
+import sys
+import os
+import pandas as pd 
+import numpy as np
+import json
+import openpyxl
+from functions import string_converter
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
+
+desired_with = 320
+pd.set_option("display.width", desired_with)
+pd.set_option("display.max_columns", 20)
+pd.set_option("display.max_rows", 800)
+
+df = pd.read_excel(os.environ["SOURCE_FILE"], sheet_name="ShipMe Partners", engine="openpyxl")
+
+df['Entity'] = df['Entity'].str.upper()
+df['Operator'] = df['Operator'].str.upper()
+
+print(df.head(30))
+
+converter(df, os.environ["DATA_FOLDER"], "shipmepartners", "relation/v1")

@@ -1,0 +1,51 @@
+# baseURI: http://rdf.olivette.org/legalEntity
+
+@prefix : <http://rdf.olivette.org/legalEntity#> .
+@prefix location: <http://rdf.olivette.org/location#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rdf.olivette.org/legalEntity>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:LegalEntity
+  rdf:type owl:Class ;
+  rdfs:comment """Legal entity as sits in the Chamber of Commerce
+""" ;
+  rdfs:label "Legal Entity" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:LegalEntityGroup
+  rdf:type owl:Class ;
+  rdfs:comment """Group (holding) of legal entities
+""" ;
+  rdfs:label "Legal Entity Group" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:belongsTo
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "shows which legal entity group that a legal entity belongs" ;
+  rdfs:domain :LegalEntity ;
+  rdfs:label "Legal entity belongs to Legal entity group" ;
+  rdfs:range :LegalEntityGroup ;
+.
+:legalEntityGroupName
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "The name of the group of legal entities" ;
+  rdfs:domain :LegalEntityGroup ;
+  rdfs:label "Legal Entity Group Name" ;
+  rdfs:range xsd:string ;
+.
+:legalEntityName
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "The name of the legal entity as stated in the Chamber of Commerce." ;
+  rdfs:domain :LegalEntity ;
+  rdfs:label "Legal Entity Name" ;
+  rdfs:range xsd:string ;
+.

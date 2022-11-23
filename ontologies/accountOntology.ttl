@@ -1,0 +1,148 @@
+# baseURI: http://rdf.olivette.org/account
+# imports: http://rdf.olivette.org/legalEntity
+
+@prefix : <http://rdf.olivette.org/account#> .
+@prefix legalEntity: <http://rdf.olivette.org/legalEntity#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rdf.olivette.org/account>
+  rdf:type owl:Ontology ;
+  owl:imports <http://rdf.olivette.org/legalEntity> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:Account
+  rdf:type owl:Class ;
+  rdfs:comment "An account in which transactions about manufacturing, customers and vendors is booked." ;
+  rdfs:label "Account" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:AccountType
+  rdf:type owl:Class ;
+  rdfs:comment "indicates the type of the account." ;
+  rdfs:label "AccountType" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Contract
+  rdf:type owl:Class ;
+  rdfs:comment "The official contract which has made between the company and its customers or vendors." ;
+  rdfs:label "Contract" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:LocationAccount
+  rdf:type owl:Class ;
+  rdfs:comment "An account in which transactions about manufacturing facilities and warehouses is booked." ;
+  rdfs:label "Location Account" ;
+  rdfs:subClassOf :Account ;
+.
+:PartnerAccount
+  rdf:type owl:Class ;
+  rdfs:comment "An account in which transactions about customers and vendors is booked." ;
+  rdfs:label "Partner Account" ;
+  rdfs:subClassOf :Account ;
+.
+:accountTypeLabel
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "shows whether the account is vendor or customer." ;
+  rdfs:domain :AccountType ;
+  rdfs:label "Label of AccountType" ;
+  rdfs:range xsd:string ;
+.
+:bottling
+  rdf:type :Contract ;
+  :contractLabel "Bottling" ;
+.
+:cleanDischarge
+  rdf:type :Contract ;
+  :contractLabel "Clean Discharge" ;
+.
+:contractLabel
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "shows the type of contract." ;
+  rdfs:domain :Contract ;
+  rdfs:label "Label of Contract" ;
+  rdfs:range xsd:string ;
+.
+:customer
+  rdf:type :AccountType ;
+  :accountTypeLabel "Customer" ;
+.
+:exchange
+  rdf:type :Contract ;
+  :contractLabel "Exchange" ;
+.
+:hasAccountType
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "shows the type of the account" ;
+  rdfs:domain :PartnerAccount ;
+  rdfs:label "Account has account type" ;
+  rdfs:range :AccountType ;
+.
+:hasContract
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "shows which contracts does the account has." ;
+  rdfs:domain :PartnerAccount ;
+  rdfs:label "Account has Contract" ;
+  rdfs:range :Contract ;
+.
+:hasLegalEntity
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Indicates which legal entity does the account belongs." ;
+  rdfs:domain :Account ;
+  rdfs:label "Account has legal entity" ;
+  rdfs:range legalEntity:LegalEntity ;
+.
+:hasPlantNumber
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "The number of the location account stated in SAP records." ;
+  rdfs:domain :LocationAccount ;
+  rdfs:label "Number of the location account." ;
+  rdfs:range xsd:string ;
+.
+:isActive
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "shows whether the account is active." ;
+  rdfs:domain :LocationAccount ;
+  rdfs:label "Is Active" ;
+  rdfs:range xsd:boolean ;
+.
+:isInterCompany
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "shows whether the company is an intercompany." ;
+  rdfs:domain :PartnerAccount ;
+  rdfs:label "Is Intercompany" ;
+  rdfs:range xsd:boolean ;
+.
+:locationAccountName
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "The name of the location account stated in SAP records." ;
+  rdfs:domain :LocationAccount ;
+  rdfs:label "Name of the location account." ;
+  rdfs:range xsd:string ;
+.
+:partnerAccountName
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "The name of the partner account stated in SAP records." ;
+  rdfs:domain :PartnerAccount ;
+  rdfs:label "Name of the partner account." ;
+  rdfs:range xsd:string ;
+.
+:partnerAccountNumber
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "The number of the partner account stated in SAP records." ;
+  rdfs:domain :PartnerAccount ;
+  rdfs:label "Number of the partner account." ;
+  rdfs:range xsd:string ;
+.
+:vendor
+  rdf:type :AccountType ;
+  :accountTypeLabel "Vendor" ;
+.

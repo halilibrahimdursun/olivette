@@ -1,0 +1,52 @@
+{
+    "iri": "http://rdf.olivette.org/dl#shipMePartnersLegalEntities",
+    "source": "http://rdf.olivette.org/dl#shipMePartners",
+    "label": "shipme_partners",
+    "root": {
+        "iri": "http://rdf.olivette.org/dl#shipMePartners_LegalEntity",
+        "class": "http://rdf.olivette.org/legalEntity#LegalEntity",
+        "projection": [
+            {
+                "predicate": "http://rdf.olivette.org/legalEntity#legalEntityName",
+                "attribute": "Entity",
+                "functional": true,
+                "rank": 1,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+                "attribute": "Entity",
+                "key": "Entity"
+            }
+        ],
+        "links": [
+            {
+                "predicate": "http://rdf.olivette.org/legalEntity#belongsTo",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#shipMePartners_LegalEntityGroup",
+                    "class": "http://rdf.olivette.org/legalEntity#LegalEntityGroup",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/legalEntity#legalEntityGroupName",
+                            "attribute": "Operator",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "classes": [
+        {
+            "iri": "http://rdf.olivette.org/legalEntity#LegalEntity",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/legalEntity#LegalEntityGroup",
+            "instantiate": true
+        }
+    ]
+}

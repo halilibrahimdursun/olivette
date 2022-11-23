@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Olivette</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>metalanguage-master</name>
+			<type>2</type>
+			<location>C:/Users/Lenovo/Desktop/Semantics/metalanguage/metalanguage-master</location>
+		</link>
+	</linkedResources>
+</projectDescription>

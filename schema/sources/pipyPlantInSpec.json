@@ -1,0 +1,110 @@
+{
+    "iri": "http://rdf.olivette.org/dl#pipyPlantFacilities",
+    "source": "http://rdf.olivette.org/dl#pipyPlant",
+    "label": "pipy_plant",
+    "root": {
+        "iri": "http://rdf.olivette.org/dl#pipyPlant_Warehouse",
+        "class": "http://rdf.olivette.org/location#Warehouse",
+        "projection": [
+            {
+                "predicate": "http://rdf.olivette.org/location#warehouseName",
+                "attribute": "Operator",
+                "functional": true,
+                "rank": 0,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+                "attribute": "FACILITY_CODE",
+                "key": "FACILITY_CODE"
+            }
+        ],
+        "links": [
+            {
+                "predicate": "http://rdf.olivette.org/location#hasFacility",
+                "functional": false,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#pipyPlant_Facility",
+                    "class": "http://rdf.olivette.org/location#Facility",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/location#facilityName",
+                            "attribute": "FACILITY",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        },
+                        {
+                            "predicate": "http://rdf.olivette.org/location#facilityLabel",
+                            "attribute": "FACILITY_LABEL",
+                            "functional": false,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        },
+                        {
+                            "predicate": "http://rdf.olivette.org/location#isCleanDischarge",
+                            "attribute": "CD",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/location#locatedOn",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#pipyPlant_Address",
+                    "class": "http://rdf.olivette.org/location#Address",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/location#addressHash",
+                            "attribute": "Address",
+                            "functional": true,
+                            "rank": 2,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/location#operatedBy",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#pipyPlant_LegalEntity",
+                    "class": "http://rdf.olivette.org/legalEntity#LegalEntity",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/legalEntity#legalEntityName",
+                            "attribute": "Operator",
+                            "functional": true,
+                            "rank": 2,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "classes": [
+        {
+            "iri": "http://rdf.olivette.org/location#Warehouse",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/location#Facility",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/location#Address",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/legalEntity#LegalEntity",
+            "instantiate": true
+        }
+    ]
+}

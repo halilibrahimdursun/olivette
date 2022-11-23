@@ -1,0 +1,103 @@
+{
+    "iri": "http://rdf.olivette.org/dl#shipMeHardWarehouses",
+    "source": "http://rdf.olivette.org/dl#shipMeHard",
+    "label": "shipme_hard",
+    "root": {
+        "iri": "http://rdf.olivette.org/dl#shipMeHard_Warehouse",
+        "class": "http://rdf.olivette.org/location#Warehouse",
+        "projection": [
+            {
+                "predicate": "http://rdf.olivette.org/location#warehouseName",
+                "attribute": "NAME",
+                "functional": true,
+                "rank": 4,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+                "attribute": "PLANT",
+                "key": "PLANT"
+            }
+        ],
+        "links": [
+            {
+                "predicate": "http://rdf.olivette.org/location#hasLocationAccount",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#shipMeHard_LocationAccount",
+                    "class": "http://rdf.olivette.org/account#LocationAccount",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/account#hasPlantNumber",
+                            "attribute": "PLANT",
+                            "functional": true,
+                            "rank": 3,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/location#hasFacility",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#shipMeHard_Facility",
+                    "class": "http://rdf.olivette.org/location#Facility",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/location#facilityLabel",
+                            "attribute": "FACILITY",
+                            "functional": false,
+                            "rank": 2,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            },
+            {
+                "predicate": "http://rdf.olivette.org/location#hasShipmentMethod",
+                "functional": true,
+                "rank": 1,
+                "to": {
+                    "iri": "http://rdf.olivette.org/dl#shipMeHard_ShipmentMethod",
+                    "class": "http://rdf.olivette.org/location#ShipmentMethod",
+                    "projection": [
+                        {
+                            "predicate": "http://rdf.olivette.org/location#shipmentMethodLabel",
+                            "attribute": "TAX FREE",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        },
+                        {
+                            "predicate": "http://rdf.olivette.org/location#hasExpireDate",
+                            "attribute": "FACILITY RENEW",
+                            "functional": true,
+                            "rank": 1,
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "classes": [
+        {
+            "iri": "http://rdf.olivette.org/location#Warehouse",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/account#LocationAccount",
+            "instantiate": true
+        },
+        {
+            "iri": "http://rdf.olivette.org/location#Facility",
+            "instantiate": false
+        },
+        {
+            "iri": "http://rdf.olivette.org/location#ShipmentMethod",
+            "instantiate": true
+        }
+    ]
+}

@@ -1,0 +1,95 @@
+{
+    "version": "relation/v1",
+    "header": [
+        "FACILITY_CODE",
+        "FACILITY",
+        "CD",
+        "Address",
+        "Operator",
+        "FACILITY_LABEL",
+        "CITY"
+    ],
+    "values": [
+        [
+            1,
+            "Rotterdam Olive",
+            0,
+            "1a2b3c",
+            "Olivette Group SE",
+            "Olive",
+            "Rotterdam"
+        ],
+        [
+            2,
+            "Rotterdam Clean Discharge",
+            1,
+            "1a2b3c",
+            "Olivette Group SE",
+            "Clean Discharge",
+            "Rotterdam"
+        ],
+        [
+            3,
+            "Rotterdam shells & nuts",
+            0,
+            "1a2b3c",
+            "Olivette Group SE",
+            "shells & nuts",
+            "Rotterdam"
+        ],
+        [
+            4,
+            "Rome shells & nuts",
+            0,
+            "2q3w3e",
+            "Olivette Group SE",
+            "shells & nuts",
+            "Rome"
+        ],
+        [
+            5,
+            "Rome Olive",
+            0,
+            "2q3w3e",
+            "Olivette Group SE",
+            "Olive",
+            "Rome"
+        ],
+        [
+            6,
+            "Corleone Olive",
+            0,
+            "2e3r4t",
+            "Olivette Group SE",
+            "Olive",
+            "Corleone"
+        ],
+        [
+            7,
+            "Amsterdam Olive",
+            0,
+            "1q2w3e",
+            "Olivette Group SE",
+            "Olive",
+            "Amsterdam"
+        ],
+        [
+            8,
+            "Malage Olive",
+            0,
+            "3r4t5y",
+            "Olivette Group SE",
+            "Olive",
+            "Malage"
+        ],
+        [
+            9,
+            "Malaga Clean Discharge",
+            1,
+            "3r4t5y",
+            "Olivette Group SE",
+            "Clean Discharge",
+            "Malaga"
+        ]
+    ]
+}

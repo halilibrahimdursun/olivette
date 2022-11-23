@@ -1,0 +1,42 @@
+{
+    "iri": "http://rdf.olivette.org/dl#sapPlantLocationAccounts",
+    "source": "http://rdf.olivette.org/dl#sapPlant",
+    "label": "sap_plant",
+    "root": {
+        "iri": "http://rdf.olivette.org/dl#sapPlant_LocationAccount",
+        "class": "http://rdf.olivette.org/account#LocationAccount",
+        "projection": [
+            {
+                "predicate": "http://rdf.olivette.org/account#locationAccountName",
+                "attribute": "NM",
+                "functional": true,
+                "rank": 1,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+                "predicate": "http://rdf.olivette.org/account#isActive",
+                "attribute": "ACTIVE",
+                "functional": true,
+                "rank": 1,
+                "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+            },
+            {
+                "predicate": "http://rdf.olivette.org/account#hasPlantNumber",
+                "attribute": "PLANTNR",
+                "functional": true,
+                "rank": 1,
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            {
+                "attribute": "PLANTNR",
+                "key": "PLANTNR"
+            }
+        ]
+    },
+    "classes": [
+        {
+            "iri": "http://rdf.olivette.org/account#LocationAccount",
+            "instantiate": true
+        }
+    ]
+}
